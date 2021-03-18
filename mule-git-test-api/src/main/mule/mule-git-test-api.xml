@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="88981087-19a2-4a6a-b37b-5c173bd8aca4" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="mule-git-test-apiFlow" doc:id="030c4a78-afca-4546-9762-66114df58d46" >
+		<http:listener doc:name="Listener" doc:id="011b3575-147f-4de6-9094-c667895fee45" config-ref="HTTP_Listener_config" path="/mule-git-test-api"/>
+		<set-payload value='#["This is GIR and MULE Test"]' doc:name="Set Payload" doc:id="2f9a0283-5b36-4276-b790-04a77debb0ec" />
+	</flow>
+</mule>
